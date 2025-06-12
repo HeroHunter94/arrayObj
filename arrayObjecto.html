@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayObjecto</title>
+</head>
+<body>
+    <h1>Information about months of the year.</h1>
+    <p>Choose in which month you need information: </p>
+    <select id = "months" size = "12">
+        <option value = "0">January</option>
+        <option value = "1">February</option>
+        <option value = "2">March</option>
+        <option value = "3"> April</option>
+        <option value = "4">May</option>
+        <option value = "5">June</option>
+        <option value = "6">July</option>
+        <option value = "7">August</option>
+        <option value = "8">September</option>
+        <option value = "9">October</option>
+        <option value = "10">November</option>
+        <option value = "11">December</option>
+    </select>
+    <br><button type = "button" onclick = "showInformation()">Show information about</button>
+    <div id = "output"></div>
+
+    <script>
+        const arrayObj = {
+                months : ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
+                day : [31, 28, 31, 31, 31, 30, 31, 31, 30, 31, 30, 31],
+                trimestre: [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4],
+                season : ["winter", "winter", "springs","springs","springs", "summer", "summer", "summer", "autumn", "autumn", "autumn", "winter"],
+                catalan : ["gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre"],
+                castellano : ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+                italiano : ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+            }
+
+        const MONTH = document.getElementById("months");
+        function showInformation(){
+            let month = parseInt(MONTH.value);
+            
+            document.getElementById("output").innerHTML = `<p>information about <strong>${arrayObj.months[month]}</strong></p><ul><li>day of the month: ${arrayObj.day[month]}</li><li>trimester: ${arrayObj.trimestre[month]}</li><li>season: ${arrayObj.season[month]}</li><li> Catalan: ${arrayObj.catalan[month]}</li><li>Castellano: ${arrayObj.castellano[month]}</li><li> Italiano: ${arrayObj.italiano[month]}</li></ul>`
+    }
+    </script>
+
+    
+</body>
+</html>
